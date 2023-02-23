@@ -118,12 +118,10 @@ class ViewController: UIViewController, UITextFieldDelegate, SFSafariViewControl
 
         
         // MARK: - Stretch #1
-        
-        
-        
-        // TODO: - Stretch #1
-//        purchasedPackagesLabel.text = "Buy \(purchasedPackages) packages"
-//        individualTicketsLabel.text = "Buy \(individualTickets) single tickets"
+        let purchasedPackages = tickets/4
+        purchasedPackagesLabel.text = "Buy \(purchasedPackages) packages"
+        let individualTickets = tickets%4
+        individualTicketsLabel.text = "Buy \(individualTickets) single tickets"
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
@@ -136,14 +134,13 @@ class ViewController: UIViewController, UITextFieldDelegate, SFSafariViewControl
         tickets = numberOfTickets
         
         if sender.velocity > 0 {
-            // MARK: - Stretch #2 - Increase
             
+            tickets += 1
             
             
         } else {
-            // MARK: - Stretch #2 - Decrease
             
-            
+            tickets -= 1
             
         }
         
@@ -156,14 +153,13 @@ class ViewController: UIViewController, UITextFieldDelegate, SFSafariViewControl
         guard let urlAddOn = urlAddOnTextField.text else { return }
         
         // MARK: - Stretch #3
-        
-        
-        
-        // TODO: - Stretch #3
-//        let myUrl = URL(string: fullURLPath)
-//        let svc = SFSafariViewController(url: myUrl!)
-//        svc.delegate = self
-//        self.present(svc, animated: true, completion: nil)
+        var uncharted = "https://www.unchartedlearning.org/"
+        let fullURLPath = uncharted
+        let myUrl = URL(string: fullURLPath)
+        let svc = SFSafariViewController(url: myUrl!)
+        svc.delegate = self
+        self.present(svc, animated: true,
+        completion: nil)
 
     }
 }
